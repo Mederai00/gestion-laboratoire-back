@@ -1,7 +1,7 @@
 package com.gestion.spring.login.models;
 
 import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
 
 import javax.persistence.*;
@@ -9,7 +9,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.gestion.spring.login.models.Role;
 
 
 @Entity
@@ -22,15 +21,8 @@ public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  
   private String name;
   
-  @ManyToOne
-  private Laboratoire laboratoire;
-  
-  
-  @OneToMany(mappedBy = "user")
-  private List<BudgetPersonnel> budgetPersonnels;
 
   @NotBlank
   @Size(max = 20)
@@ -70,24 +62,6 @@ public class User {
     this.id = id;
   }
 
-  public Laboratoire getLaboratoire() {
-	return laboratoire;
-}
-
-
-public void setLaboratoire(Laboratoire laboratoire) {
-	this.laboratoire = laboratoire;
-}
-
-
-public List<BudgetPersonnel> getBudgetPersonnels() {
-	return budgetPersonnels;
-}
-
-
-public void setBudgetPersonnels(List<BudgetPersonnel> budgetPersonnels) {
-	this.budgetPersonnels = budgetPersonnels;
-}
 
 
 public String getName() {

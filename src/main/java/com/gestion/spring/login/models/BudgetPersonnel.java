@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 
 import lombok.AllArgsConstructor;
@@ -20,10 +19,8 @@ public class BudgetPersonnel {
 	private Long id;
 	@ManyToOne
 	private Budget budget;
+	private Double somme;
 	@ManyToOne
 	private User user;
-	private Double somme;
-	
-
 
 }
