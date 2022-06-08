@@ -27,6 +27,11 @@ public class Laboratoire {
 	@OneToMany
 	private List<Budget> budgets;
 	
+	private String telephone;
+	private String ville;
+	private String domaine;
+
+	
 	
 	
 	

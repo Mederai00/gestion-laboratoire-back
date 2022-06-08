@@ -1,7 +1,7 @@
 package com.gestion.spring.login.models;
 
 import java.util.HashSet;
-
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -37,6 +37,10 @@ public class User {
   @Size(max = 120)
   private String password;
   
+  @Transient
+  private List<BudgetPersonnel> budgetPersonnels;
+  
+
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "user_roles", 
@@ -63,6 +67,14 @@ public class User {
   }
 
 
+  public List<BudgetPersonnel> getBudgetPersonnels() {
+	return budgetPersonnels;
+}
+
+
+public void setBudgetPersonnels(List<BudgetPersonnel> budgetPersonnels) {
+	this.budgetPersonnels = budgetPersonnels;
+}
 
 public String getName() {
 	return name;

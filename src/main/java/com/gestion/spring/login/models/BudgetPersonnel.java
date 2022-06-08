@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +23,7 @@ public class BudgetPersonnel {
 	private Budget budget;
 	private Double somme;
 	@ManyToOne
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private User user;
 
 }
