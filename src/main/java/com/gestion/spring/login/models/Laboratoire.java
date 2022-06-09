@@ -30,9 +30,5 @@ public class Laboratoire {
 	private String telephone;
 	private String ville;
 	private String domaine;
-
-	
-	
-	
 	
 }

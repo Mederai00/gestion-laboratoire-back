@@ -1,5 +1,7 @@
 package com.gestion.spring.login.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,5 +24,10 @@ public class UserController {
 	User findById(@PathVariable long id) {
 		return userService.findById(id);
 	}
-
+	
+	@GetMapping(value = "/users-without-labos/")
+	List<User> findUsersWithoutLabos(){
+		return userService.findUsersWithoutLabos();
+	}
+	
 }
