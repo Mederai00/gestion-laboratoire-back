@@ -1,6 +1,7 @@
 package com.gestion.spring.login;
 
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,14 +33,14 @@ implements CommandLineRunner
 	@Transactional
 	public void run(String... args) throws Exception {
 
-//			List<BudgetPersonnel> budgetPersonnels = budgetPersonnelRepository.findAll();
-//			for(BudgetPersonnel budgetPersonnel: budgetPersonnels) {
-//				budgetPersonnel.setSomme(budgetPersonnel.getSomme()/2 );
-//				budgetPersonnel.setSomme((double)Math.round(budgetPersonnel.getSomme()) );
-//				
-//				budgetPersonnelRepository.save(budgetPersonnel);
-//			}
-//			
+			List<BudgetPersonnel> budgetPersonnels = budgetPersonnelRepository.findAll();
+			for(BudgetPersonnel budgetPersonnel: budgetPersonnels) {
+				budgetPersonnel.setSomme(budgetPersonnel.getSomme()/2 );
+				budgetPersonnel.setSomme((double)Math.round(budgetPersonnel.getSomme()) );
+				
+				budgetPersonnelRepository.save(budgetPersonnel);
+			}
+			
 			
 //			List<Laboratoire> laboratoires = laboratoireRepository.findAll();
 //			for(Laboratoire laboratoire: laboratoires) {

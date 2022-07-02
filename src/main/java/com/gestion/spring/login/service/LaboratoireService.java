@@ -43,4 +43,9 @@ public class LaboratoireService {
 		laboratoireRepository.deleteById(idLab);
 		//return labo;
 	}
+	
+	public Laboratoire findByUserId(int idUser) {
+		int idLabo = laboratoireRepository.findIdLaboratoireByUserId(idUser);
+		return laboratoireRepository.findById(idLabo);
+	}
 }

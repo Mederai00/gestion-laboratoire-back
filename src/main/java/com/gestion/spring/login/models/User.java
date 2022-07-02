@@ -3,13 +3,10 @@ package com.gestion.spring.login.models;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-
 
 @Entity
 @Table(name = "users",
@@ -22,7 +19,9 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
-  
+  private String telephone;
+  private String dateNaissance;
+  private String adresse;
 
   @NotBlank
   @Size(max = 20)
@@ -115,4 +114,35 @@ public String getUsername() {
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
   }
+
+
+public String getTelephone() {
+	return telephone;
+}
+
+
+public void setTelephone(String telephone) {
+	this.telephone = telephone;
+}
+
+
+public String getDateNaissance() {
+	return dateNaissance;
+}
+
+
+public void setDateNaissance(String dateNaissance) {
+	this.dateNaissance = dateNaissance;
+}
+
+
+public String getAdresse() {
+	return adresse;
+}
+
+
+public void setAdresse(String adresse) {
+	this.adresse = adresse;
+}
+  
 }

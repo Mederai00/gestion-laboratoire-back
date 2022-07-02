@@ -44,4 +44,9 @@ public class LaboratoireController {
 		laboratoireService.deleteById(idLab);
 	}
 	
+	@GetMapping(value = "/user/id/{idUser}")
+	Laboratoire findByUserId(@PathVariable int idUser) {
+		return laboratoireService.findByUserId(idUser);
+	}
+	
 }

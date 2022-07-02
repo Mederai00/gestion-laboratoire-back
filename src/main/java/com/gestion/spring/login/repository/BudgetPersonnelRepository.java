@@ -12,5 +12,5 @@ import com.gestion.spring.login.models.BudgetPersonnel;
 public interface BudgetPersonnelRepository extends JpaRepository<BudgetPersonnel, Long> {
 
 	List<BudgetPersonnel> findByUserId(long id);
-
+	BudgetPersonnel findBPersonnelByUserIdAndBudgetAnnee(long userId, int annee);
 }

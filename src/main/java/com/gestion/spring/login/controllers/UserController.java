@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gestion.spring.login.models.User;
+import com.gestion.spring.login.repository.UserRepository;
 import com.gestion.spring.login.service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
@@ -19,6 +20,8 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+	@Autowired
+	UserRepository userRepository;
 	
 	@GetMapping(value = "/id/{id}")
 	User findById(@PathVariable long id) {
@@ -30,4 +33,8 @@ public class UserController {
 		return userService.findUsersWithoutLabos();
 	}
 	
+	@GetMapping(value = "/")
+	List<User> findAll(){
+		return userRepository.findAll();
+	}
 }

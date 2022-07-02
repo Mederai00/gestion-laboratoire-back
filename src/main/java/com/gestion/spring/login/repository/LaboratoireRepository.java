@@ -26,5 +26,10 @@ public interface LaboratoireRepository extends JpaRepository<Laboratoire, Long>{
 	void dissocierBudgetsLabo(long laboratoireId);
 	
 	 void deleteById(long id);
+	 
+	 @Query(value = "SELECT l.laboratoire_id FROM LABORATOIRE_MEMBRES l WHERE l.membres_id = ?1", nativeQuery = true)
+	 int findIdLaboratoireByUserId(int userId);
+	 
+	 Laboratoire findById(long id);
 	
 }

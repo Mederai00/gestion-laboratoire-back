@@ -1,6 +1,5 @@
 package com.gestion.spring.login.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
